@@ -2,7 +2,7 @@ import 'package:k_wear_v2/commonlibs.dart';
 import 'package:k_wear_v2/features/authentication/controllers/onboarding.controller.dart';
 import 'package:k_wear_v2/utils/constants/sizes.dart';
 import 'package:k_wear_v2/utils/device/device.utility.dart';
-import 'package:k_wear_v2/utils/helpers/helper.functions.dart';
+// import 'package:k_wear_v2/utils/helpers/helper.functions.dart';
 
 class OnBoardingNavigation extends StatelessWidget {
   const OnBoardingNavigation({
@@ -12,7 +12,7 @@ class OnBoardingNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = OnBoardingController.instance;
-    final dark = KHelperFunctions.isDarkMode(context);
+    // final dark = KHelperFunctions.isDarkMode(context);
 
     return Positioned(
       bottom: KDeviceUtils.getBottomNavigationBarHeight() + 25,

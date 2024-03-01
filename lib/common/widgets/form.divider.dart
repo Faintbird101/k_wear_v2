@@ -1,5 +1,4 @@
 import 'package:k_wear_v2/commonlibs.dart';
-import 'package:k_wear_v2/utils/constants/text.string.dart';
 import 'package:k_wear_v2/utils/helpers/helper.functions.dart';
 
 class KFormDivider extends StatelessWidget {
