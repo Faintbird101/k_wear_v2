@@ -1,5 +1,5 @@
 import 'package:k_wear_v2/commonlibs.dart';
-import 'package:k_wear_v2/features/authentication/screens/onboarding.dart';
+import 'package:k_wear_v2/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:k_wear_v2/utils/theme/theme.dart';
 
 void main() {

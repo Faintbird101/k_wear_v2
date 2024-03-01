@@ -1,6 +1,6 @@
 class KImages {
-  static const String darkAppLogo = "";
-  static const String lightAppLogo = "";
+  static const String darkAppLogo = "assets/logos/dark.png";
+  static const String lightAppLogo = "assets/logos/light.png";
 
   // --Onboarding
   static const String onBoardingImage1 = "assets/images/1.json";
