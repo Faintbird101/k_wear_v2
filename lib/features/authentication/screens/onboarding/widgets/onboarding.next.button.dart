@@ -14,13 +14,28 @@ class OnBoardingNextButton extends StatelessWidget {
     final controller = Get.put(OnBoardingController());
     // final dark = KHelperFunctions.isDarkMode(context);
     return Positioned(
-        right: KSizes.defaultSpace,
-        bottom: KDeviceUtils.getBottomNavigationBarHeight(),
-        child: ElevatedButton(
-          child: Icon(MdiIcons.chevronRight),
-          onPressed: () {
-            controller.nextPage();
-          },
-        ));
+      right: KSizes.defaultSpace,
+      bottom: KDeviceUtils.getBottomNavigationBarHeight(),
+      child: TextButton(
+        onPressed: () {
+          controller.nextPage();
+        },
+        child: Row(
+          children: [
+            Text(
+              'Next',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+            Icon(MdiIcons.chevronRight)
+          ],
+        ),
+      ),
+      // ElevatedButton(
+      //   child: Icon(MdiIcons.chevronRight),
+      //   onPressed: () {
+      //     controller.nextPage();
+      //   },
+      // ),
+    );
   }
 }

@@ -12,13 +12,17 @@ class OnBoardingSkip extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(OnBoardingController());
     return Positioned(
-        top: KDeviceUtils.getAppBarHeight(),
-        right: KSizes.defaultSpace,
-        child: TextButton(
-          onPressed: () {
-            controller.skipPage();
-          },
-          child: Text('Skip'),
-        ));
+      top: KDeviceUtils.getAppBarHeight(),
+      right: KSizes.defaultSpace,
+      child: TextButton(
+        onPressed: () {
+          controller.skipPage();
+        },
+        child: Text(
+          'Skip',
+          style: Theme.of(context).textTheme.bodySmall,
+        ),
+      ),
+    );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:k_wear_v2/commonlibs.dart';
+import 'package:k_wear_v2/features/authentication/screens/register/register.dart';
 import 'package:k_wear_v2/utils/constants/sizes.dart';
 import 'package:k_wear_v2/utils/constants/text.string.dart';
 
@@ -30,7 +31,7 @@ class KLoginForm extends StatelessWidget {
                   suffixIcon: Icon(MdiIcons.eye)),
             ),
             const SizedBox(height: KSizes.spaceBtwnInputFields / 2),
-    
+
             // Remember Me & Forgot Password
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -57,7 +58,7 @@ class KLoginForm extends StatelessWidget {
               ],
             ),
             const SizedBox(height: KSizes.spaceBtwnSections),
-    
+
             // sign in button
             SizedBox(
               width: double.infinity,
@@ -70,12 +71,16 @@ class KLoginForm extends StatelessWidget {
               ),
             ),
             const SizedBox(height: KSizes.spaceBtwnItems),
-    
+
             // create account button
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(
+                    () => const RegisterScreen(),
+                  );
+                },
                 child: Text(
                   KTexts.createAccount,
                   style: Theme.of(context).textTheme.bodyMedium,

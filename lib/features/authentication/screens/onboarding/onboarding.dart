@@ -7,8 +7,21 @@ import 'widgets/onboarding.dot.navigation.dart';
 import 'widgets/onboarding.next.button.dart';
 import 'widgets/onboarding.skip.dart';
 
-class OnBoardingScreen extends StatelessWidget {
+class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
+
+  @override
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+}
+
+final controller = Get.put(OnBoardingController());
+
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  @override
+  void initState() {
+    controller.nextbutton();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +58,11 @@ class OnBoardingScreen extends StatelessWidget {
           const OnBoardingNavigation(),
 
           // Circular Button
-          const OnBoardingNextButton()
+
+          const OnBoardingNextButton(),
+          // Obx(
+          //   () => controller.currentPageIndex.value == 2 ? const OnBoardingNextButton() : const SizedBox(),
+          // ),
         ],
       ),
     );

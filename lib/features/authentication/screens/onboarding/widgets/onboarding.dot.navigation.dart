@@ -16,16 +16,16 @@ class OnBoardingNavigation extends StatelessWidget {
 
     return Positioned(
       bottom: KDeviceUtils.getBottomNavigationBarHeight() + 25,
-      left: KSizes.defaultSpace,
+      left: MediaQuery.of(context).size.width * 0.36,
       child: SmoothPageIndicator(
-          controller: controller.pageController, // PageController
-          count: 3,
-          effect: ExpandingDotsEffect(
-            activeDotColor: $styles.colors.grey,
-            dotHeight: 8,
-          ), // your preferred effect
-          onDotClicked: controller.dotNavigationClick,
-          ),
+        controller: controller.pageController, // PageController
+        count: 3,
+        effect: ExpandingDotsEffect(
+          activeDotColor: $styles.colors.grey,
+          dotHeight: 8,
+        ), // your preferred effect
+        onDotClicked: controller.dotNavigationClick,
+      ),
     );
   }
 }
