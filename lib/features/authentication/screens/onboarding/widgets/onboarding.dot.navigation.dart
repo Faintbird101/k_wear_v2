@@ -1,6 +1,5 @@
 import 'package:k_wear_v2/commonlibs.dart';
 import 'package:k_wear_v2/features/authentication/controllers/onboarding.controller.dart';
-import 'package:k_wear_v2/utils/constants/sizes.dart';
 import 'package:k_wear_v2/utils/device/device.utility.dart';
 // import 'package:k_wear_v2/utils/helpers/helper.functions.dart';
 

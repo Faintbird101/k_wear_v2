@@ -1,7 +1,7 @@
 class KImages {
   //  --Logos
-  static const String darkAppLogo = "assets/logos/dark.png";
-  static const String lightAppLogo = "assets/logos/light.png";
+  static const String darkAppLogo = "assets/logos/ecommerce.png";
+  static const String lightAppLogo = "assets/logos/ecommerce.png";
   static const String lightWelcomeLogo = "assets/logos/light_welcome.png";
   static const String darkWelcomeLogo = "assets/logos/dark_welcome.png";
 

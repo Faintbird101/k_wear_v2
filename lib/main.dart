@@ -1,19 +1,38 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:k_wear_v2/commonlibs.dart';
-import 'package:k_wear_v2/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:k_wear_v2/features/authentication/screens/splash/splash.screen.dart';
 import 'package:k_wear_v2/firebase_options.dart';
 import 'package:k_wear_v2/utils/theme/theme.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
-  WidgetsFlutterBinding();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  runApp(const MyApp());
+  // final WidgetsBinding widgetsBinding =
+  WidgetsFlutterBinding.ensureInitialized();
+  //  -- Getx Local Storage --
+  await GetStorage.init();
+
+  //  --Await Splash until other items are loaded
+  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  //  --Shared Preferences
+  final prefs = await SharedPreferences.getInstance();
+  final isFirstTime = prefs.getBool('isFirstTime') ?? false;
+
+  // -- Initialize Firebase
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // .then(
+  //   (value) => Get.put(AuthenticationRepository()),
+  // );
+  runApp(MyApp(isFirstTime: isFirstTime));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool isFirstTime;
+  const MyApp({
+    super.key,
+    required this.isFirstTime,
+  });
 
   // This widget is the root of your application.
   @override
@@ -23,7 +42,8 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: KAppTheme.lightTheme,
       darkTheme: KAppTheme.darkTheme,
-      home: const OnBoardingScreen(),
+      home: const SplashScreen(),
+      // isFirstTime ? const Mainpage() : const
     );
   }
 }

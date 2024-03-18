@@ -8,8 +8,8 @@ import 'package:k_wear_v2/utils/constants/sizes.dart';
 import 'package:k_wear_v2/utils/helpers/helper.functions.dart';
 
 class LoginPage extends StatefulWidget {
-  final VoidCallback showRegisterPage;
-  const LoginPage({super.key, required this.showRegisterPage});
+  final VoidCallback? showRegisterPage;
+  const LoginPage({super.key, this.showRegisterPage});
 
   @override
   State<LoginPage> createState() => _LoginPageState();

@@ -1,6 +1,7 @@
-
 import 'package:k_wear_v2/commonlibs.dart';
 import 'package:k_wear_v2/features/authentication/controllers/user.controller.dart';
+import 'package:k_wear_v2/utils/constants/image.strings.dart';
+import 'package:k_wear_v2/utils/helpers/helper.functions.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback showLoginPage;
@@ -27,6 +28,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
+    final dark = KHelperFunctions.isDarkMode(context);
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -36,8 +38,8 @@ class _RegisterPageState extends State<RegisterPage> {
               children: [
                 //logo
                 Image.asset(
-                  'assets/login.png',
-                  scale: 5.0,
+                  dark ? KImages.darkWelcomeLogo : KImages.lightWelcomeLogo,
+                  scale: 3.6,
                 ),
                 // Icon(
                 //   MdiIcons.weightLifter,

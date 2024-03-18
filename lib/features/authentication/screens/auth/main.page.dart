@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:k_wear_v2/features/authentication/screens/auth/auth.page.dart';
 import 'package:k_wear_v2/features/authentication/screens/verification/email.verification.dart';
-import 'package:k_wear_v2/features/shop/screens/Home/home.page.dart';
+import 'package:k_wear_v2/navigation.menu.dart';
 
 class Mainpage extends StatefulWidget {
   const Mainpage({super.key});
@@ -22,7 +22,8 @@ class _MainpageState extends State<Mainpage> {
           if (snapshot.hasData) {
             final user = snapshot.data!;
             return user.emailVerified
-                ? const HomeScreen()
+                ? const NavigationMenu()
+                // HomeScreen()
                 : const EmailVerificationScreen();
           } else {
             return const AuthPage();

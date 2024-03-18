@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:http/http.dart' as http;
 import 'package:k_wear_v2/commonlibs.dart';
 import 'package:k_wear_v2/features/authentication/models/user.model.dart';
 import 'package:k_wear_v2/features/authentication/screens/auth/main.page.dart';

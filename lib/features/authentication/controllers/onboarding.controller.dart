@@ -1,7 +1,6 @@
 import 'package:k_wear_v2/commonlibs.dart';
-import 'package:k_wear_v2/features/authentication/screens/auth/auth.page.dart';
 import 'package:k_wear_v2/features/authentication/screens/auth/main.page.dart';
-import 'package:k_wear_v2/features/authentication/screens/login/login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
@@ -29,9 +28,17 @@ class OnBoardingController extends GetxController {
   }
 
   // update current index & jump to next page
-  void nextPage() {
+  void nextPage() async {
     if (currentPageIndex == 2) {
-      // Get.to(() => const Mainpage());
+    //   final storage = GetStorage();
+
+    //   if (kDebugMode) {
+    //   log("==================  GET STORAGE Next Button =================");
+    //   log(storage.read('isFirstTime'));
+    // }
+    //   storage.write('isFirstTime', false);
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setBool('isFirstTime', true);
       Get.off(
         () => const Mainpage(),
       );

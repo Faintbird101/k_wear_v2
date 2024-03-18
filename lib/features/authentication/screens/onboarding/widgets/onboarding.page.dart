@@ -21,13 +21,11 @@ class OnBoardingPage extends StatelessWidget {
         children: [
           Lottie.asset(
             image,
-            // KImages.onBoardingImage2,
             width: KHelperFunctions.screenWidth() * 0.8,
             height: KHelperFunctions.screenHeight() * 0.6,
           ),
           Text(
             title,
-            // KTexts.onBoardingTitle1,
             style: Theme.of(context).textTheme.headlineMedium,
             textAlign: TextAlign.center,
           ),
@@ -36,7 +34,6 @@ class OnBoardingPage extends StatelessWidget {
           ),
           Text(
             subTitle,
-            // KTexts.onBoardingSubtitle1,
             style: Theme.of(context).textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),

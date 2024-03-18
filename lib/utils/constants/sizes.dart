@@ -33,6 +33,7 @@ class KSizes {
 
   // Default spacing between sections
   static const double defaultSpace = 24.0;
+  static const double defaultnormalSpace = 10.0;
   static const double spaceBtwnItems = 16.0;
   static const double spaceBtwnSections = 32.0;
 
